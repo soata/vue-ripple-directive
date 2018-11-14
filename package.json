@@ -1,6 +1,6 @@
 {
   "name": "vue-ripple-directive",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Vue Material Ripple Effect Directive",
   "main": "src/ripple.js",
   "repository": {
