@@ -57,7 +57,6 @@ var Ripple = {
 
       // Create the ripple and its container
       var ripple = document.createElement("div");
-
       var rippleContainer = document.createElement("div");
       rippleContainer.className = "ripple-container";
       ripple.className = "ripple";
@@ -97,12 +96,10 @@ var Ripple = {
       rippleContainer.appendChild(ripple);
       target.appendChild(rippleContainer);
 
-      ripple.style.marginLeft = dx + "px";
-      ripple.style.marginTop = dy + "px";
+      // ripple.style.marginLeft = dx + 'px'
+      // ripple.style.marginTop = dy + 'px'
+      ripple.style.transform = `translate(${dx}px,${dy}px) scale(1)`;
 
-      // No need to set positioning because ripple should be child of target and to it's relative position.
-      // rippleContainer.style.left    = left + (((window.pageXOffset || document.scrollLeft) - (document.clientLeft || 0)) || 0) + "px";
-      // rippleContainer.style.top     = top + (((window.pageYOffset || document.scrollTop) - (document.clientTop || 0)) || 0) + "px";
       rippleContainer.style.width = width + "px";
       rippleContainer.style.height = height + "px";
       rippleContainer.style.borderTopLeftRadius = style.borderTopLeftRadius;
@@ -115,10 +112,13 @@ var Ripple = {
       rippleContainer.style.direction = "ltr";
 
       setTimeout(function() {
-        ripple.style.width = radius * 2 + "px";
-        ripple.style.height = radius * 2 + "px";
-        ripple.style.marginLeft = dx - radius + "px";
-        ripple.style.marginTop = dy - radius + "px";
+        // ripple.style.width = radius * 2 + 'px'
+        // ripple.style.height = radius * 2 + 'px'
+        // ripple.style.transform = `scale(${radius * 2})`
+        // ripple.style.marginLeft = dx - radius + 'px'
+        // ripple.style.marginTop = dy - radius + 'px'
+        ripple.style.transform = `translate(${dx}px,${dy}px) scale(${radius *
+          2})`;
       }, 0);
 
       function clearRipple() {
