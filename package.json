@@ -7,6 +7,15 @@
     "type": "git",
     "url": "https://github.com/soata/vue-ripple-directive"
   },
+  "author": {
+    "name": "PygmySlowLoris Team",
+    "email": "team@pygmyslowloris.org",
+    "url": "https://github.com/PygmySlowLoris"
+  },
+  "contributors": [
+    "Guido Ceraso <guidoceraso@gmail.com> (https://github.com/hazzo)",
+    "Eduardo Marcos <edujugon@gmail.com> (https://github.com/Edujugon)"
+  ],
   "keywords": [
     "vue",
     "ripple",

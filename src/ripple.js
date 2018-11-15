@@ -21,6 +21,10 @@ var Ripple = {
       if (Ripple.colors[binding.arg]) bg = Ripple.colors[binding.arg];
     }
 
+    if (Ripple.class) {
+      el.classList.add(Ripple.class);
+    }
+
     var zIndex = Ripple.zIndex || "9999";
 
     function rippler(event, el) {
@@ -76,10 +80,14 @@ var Ripple = {
 
       // Styles for rippleContainer
       rippleContainer.style.position = "absolute";
-      rippleContainer.style.left = 0 - border + "px";
-      rippleContainer.style.top = 0 - border + "px";
-      rippleContainer.style.height = "0";
-      rippleContainer.style.width = "0";
+      // rippleContainer.style.left = 0 - border + "px";
+      // rippleContainer.style.top = 0 - border + "px";
+      rippleContainer.style.left = 0;
+      rippleContainer.style.top = 0;
+      rippleContainer.style.right = 0;
+      rippleContainer.style.bottom = 0;
+      // rippleContainer.style.height = "0";
+      // rippleContainer.style.width = "0";
       rippleContainer.style.pointerEvents = "none";
       rippleContainer.style.overflow = "hidden";
 
@@ -100,8 +108,8 @@ var Ripple = {
       // ripple.style.marginTop = dy + 'px'
       ripple.style.transform = `translate(${dx}px,${dy}px) scale(1)`;
 
-      rippleContainer.style.width = width + "px";
-      rippleContainer.style.height = height + "px";
+      // rippleContainer.style.width = width + "px";
+      // rippleContainer.style.height = height + "px";
       rippleContainer.style.borderTopLeftRadius = style.borderTopLeftRadius;
       rippleContainer.style.borderTopRightRadius = style.borderTopRightRadius;
       rippleContainer.style.borderBottomLeftRadius =
